@@ -4,7 +4,7 @@
     <div class="min-h-screen flex flex-col justify-center items-center bg-gray-100">
         <div class="w-full max-w-md bg-white shadow-md rounded-lg p-8">
             <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Registrar</h1>
-            <form action="/register" method="POST" aria-labelledby="register-form">
+            <form action="{{ route('registering') }}" method="POST" aria-labelledby="register-form">
                 @csrf
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nome</label>

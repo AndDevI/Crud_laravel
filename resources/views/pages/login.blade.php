@@ -28,7 +28,7 @@
             </form>
 
             <p class="mt-6 text-center text-gray-600 text-sm">
-                Não tem uma conta? <a href="#" class="text-blue-500 hover:underline">Cadastre-se</a>
+                Não tem uma conta? <a href="{{ route('register') }}" class="text-blue-500 hover:underline">Cadastre-se</a>
             </p>
         </div>
     </div>

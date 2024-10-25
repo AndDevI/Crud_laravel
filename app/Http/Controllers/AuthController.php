@@ -10,11 +10,11 @@ use App\Models\User;
 class AuthController extends Controller
 {
     public function index() {
-        return view('pages/login');
+        return view('auth/login');
     }
 
     public function register() {
-        return view('pages/register');
+        return view('auth/register');
     }
 
     public function registering(Request $request) {
@@ -49,6 +49,6 @@ class AuthController extends Controller
     }
 
     public function home() {
-        return view('pages/home');
+        return view('page/home');
     }
 }

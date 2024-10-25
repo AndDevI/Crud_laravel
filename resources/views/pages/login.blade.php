@@ -4,11 +4,24 @@
     <div class="min-h-screen flex flex-col justify-center items-center bg-gray-100">
         <div class="w-full max-w-md bg-white shadow-md rounded-lg p-8">
             <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Login</h1>
+
+            <!-- Exibe mensagens de erro, se houver -->
+            @if ($errors->any())
+                <div class="mb-4">
+                    <div class="text-red-600 font-bold">Erro de autenticação:</div>
+                    <ul class="text-red-600 text-sm mt-2">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <form action="{{ route('Logging') }}" method="POST" aria-labelledby="login-form">
                 @csrf
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                    <input type="email" name="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" required aria-required="true" aria-label="Email address">
+                    <input type="email" name="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" value="{{ old('email') }}" required aria-required="true" aria-label="Email address">
                 </div>
 
                 <div class="mb-6">

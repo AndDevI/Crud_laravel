@@ -47,8 +47,4 @@ class AuthController extends Controller
             ])->withInput(); 
         }
     }
-
-    public function home() {
-        return view('page/home');
-    }
 }

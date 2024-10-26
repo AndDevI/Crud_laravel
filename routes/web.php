@@ -9,6 +9,8 @@ Route::post('/Logging', [AuthController::class, 'Logging'])->name('Logging');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/registering', [AuthController::class, 'registering'])->name('registering');
 
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 use App\Http\Controllers\ProductController;
 Route::get('/home', [ProductController::class,'home'])->name('home');

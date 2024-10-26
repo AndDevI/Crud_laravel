@@ -16,4 +16,7 @@ use App\Http\Controllers\ProductController;
 Route::get('/home', [ProductController::class,'home'])->name('home');
 
 Route::get('/functions/create', [ProductController::class,'create'])->name('create');
-Route::post('/products', [ProductController::class,'store'])->name('productStore');
+Route::post('/products', [ProductController::class,'store'])->name('store');
+
+Route::get('/functions/{product}/edit', [ProductController::class,'edit'])->name('edit');
+Route::put('/functions/{product}', [ProductController::class,'update'])->name('update');

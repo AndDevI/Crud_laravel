@@ -5,7 +5,7 @@
         <div class="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg p-8">
             <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Criar Produto</h1>
 
-            <form action="{{ route('productStore') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-4">
@@ -41,9 +41,9 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="imagem" class="block text-gray-700 text-sm font-bold mb-2">Imagem do Produto</label>
-                    <input type="file" name="imagem" id="imagem" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                    @error('imagem')
+                    <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Imagem do Produto</label>
+                    <input type="file" name="image" id="image" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    @error('image')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
                 </div>

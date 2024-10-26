@@ -22,7 +22,7 @@ class ProductController extends Controller
             'cod' => 'required|string|max:100|unique:products,cod',
             'price' => 'required|numeric|min:0',
             'description' => 'required|string',
-            'imagem' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'imagem' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -35,6 +35,17 @@ class ProductController extends Controller
         $product->cod = $request->cod;
         $product->price = $request->price;
         $product->description = $request->description;
+
+        if ($request->hasFile('imagem')) {
+            $image = $request->file('imagem');
+            $ext = $image->getClientOriginalExtension();
+            $imageName = time().'.'.$ext;
+
+            $image->move(public_path('images'), $imageName);
+
+            $product->image = $imageName;
+        }
+
         $product->save();
 
         return redirect()->route('home')->with('success', 'Produto adicionado com sucesso!');

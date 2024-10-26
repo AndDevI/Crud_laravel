@@ -18,25 +18,22 @@ class AuthController extends Controller
     }
 
     public function registering(Request $request) {
-        // Validação dos dados
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        // Criação de um novo usuário
         $item = new User();
         $item->name = $request->name;
         $item->email = $request->email;
-        $item->password = Hash::make($request->password); // Criptografando a senha
+        $item->password = Hash::make($request->password);
         $item->save();
 
         return to_route('login');
     }
 
     public function logging(Request $request) {
-        // Validação das credenciais
         $credentials = $request->only('email', 'password'); 
 
         if(Auth::attempt($credentials)) {

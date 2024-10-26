@@ -7,4 +7,7 @@
         </div>
     @endif
 
+    <div>
+        <a href="{{ route('create') }}"></a>
+    </div>
 @endsection

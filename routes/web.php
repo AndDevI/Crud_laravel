@@ -13,11 +13,12 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 use App\Http\Controllers\ProductController;
-Route::get('/home', [ProductController::class,'home'])->name('home');
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/home', 'home')->name('home');
+    Route::get('/functions/create', 'create')->name('create');
+    Route::post('/products', 'store')->name('store');
+    Route::get('/functions/{product}/edit', 'edit')->name('edit');
+    Route::put('/functions/{product}', 'update')->name('update');
+    Route::delete('/functions/{product}', 'destroy')->name('destroy');
+});
 
-Route::get('/functions/create', [ProductController::class,'create'])->name('create');
-Route::post('/products', [ProductController::class,'store'])->name('store');
-
-Route::get('/functions/{product}/edit', [ProductController::class,'edit'])->name('edit');
-Route::put('/functions/{product}', [ProductController::class,'update'])->name('update');
-Route::delete('/functions/{product}', [ProductController::class,'destroy'])->name('destroy');

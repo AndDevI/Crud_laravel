@@ -9,7 +9,10 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function home() {
-        return view('page/home');
+        $products = Product::orderBy('created_at','DESC')->get();
+        return view('page/home',[
+            'products' => $products
+        ]);
     }
 
     public function create() {

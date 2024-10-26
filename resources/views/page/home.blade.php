@@ -63,9 +63,13 @@
                                 <td class="py-3 px-6">R$ {{ number_format($product->price, 2, ',', '.') }}</td>
                                 <td class="py-3 px-6">{{ \Carbon\Carbon::parse($product->created_at)->format('d/m/Y') }}</td>
                                 <td class="py-3 px-6 text-center">
-                                    <div class="flex item-center justify-center space-x-4">
+                                    <div class="flex items-center justify-center space-x-4">
                                         <a href="{{ route('edit', $product->id) }}" class="text-blue-500 hover:text-blue-700">Editar</a>
-                                        <a href="" class="text-red-500 hover:text-red-700">Deletar</a>
+                                        <form action="{{ route('destroy', $product->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar este produto?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-red-500 hover:text-red-700">Deletar</button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>

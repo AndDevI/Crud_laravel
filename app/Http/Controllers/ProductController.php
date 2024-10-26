@@ -103,6 +103,15 @@ class ProductController extends Controller
         return redirect()->route('home')->with('success', 'Produto atualizado com sucesso!');
     }
 
-    public function destroy() {
+    public function destroy($id) {
+        $product = Product::findOrFail($id);
+
+        if ($product->image) {
+            File::delete(public_path('images/' . $product->image));
+        }
+        $product->delete();
+
+        return redirect()->route('home')->with('success', 'Produto deletado com sucesso!');
     }
+
 }

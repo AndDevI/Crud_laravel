@@ -20,3 +20,4 @@ Route::post('/products', [ProductController::class,'store'])->name('store');
 
 Route::get('/functions/{product}/edit', [ProductController::class,'edit'])->name('edit');
 Route::put('/functions/{product}', [ProductController::class,'update'])->name('update');
+Route::delete('/functions/{product}', [ProductController::class,'destroy'])->name('destroy');

@@ -44,13 +44,12 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
    cd <nome-do-repositorio>
 
 2. **Instale as Dependências**
-    
+    Baixe também o SQLite
+
     ```bash
     composer install
     npm install -D tailwindcss
     npx tailwindcss init
-
-    Baixe também o SQLite
 
 3. **Copie o Arquivo de Configuração**
     
@@ -72,7 +71,7 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
     ```bash
     php artisan serve
 
-7. **Observações**
+7. **Observações** <br>
     Você pode utilizar outro Banco de Dados, basta fazer as configurações necessárias no arquivo .env.
 
  <div class="attribution">

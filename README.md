@@ -36,6 +36,9 @@ Antes de executar o projeto, certifique-se de ter instalado em sua máquina:
 ## Instalação
 
 Siga os passos abaixo para executar o projeto em sua máquina local:
+**Observações** <br>
+   Nesse projeto foi utilizando o **SQLite** então baixe de acordo com o seu sistema operacional, <br> 
+   mas você pode utilizar outro Banco de Dados, basta fazer as configurações necessárias no arquivo .env.
 
 1. **Clone o Repositório**
 
@@ -44,7 +47,6 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
    cd <nome-do-repositorio>
 
 2. **Instale as Dependências**
-    Baixe também o SQLite
 
     ```bash
     composer install
@@ -71,8 +73,7 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
     ```bash
     php artisan serve
 
-7. **Observações** <br>
-    Você pode utilizar outro Banco de Dados, basta fazer as configurações necessárias no arquivo .env.
+
 
  <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

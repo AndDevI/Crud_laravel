@@ -45,6 +45,7 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
 
 2. **Instale as Dependências**
     
+    ```bash
     composer install
     npm install -D tailwindcss
     npx tailwindcss init
@@ -52,19 +53,23 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
     Baixe também o SQLite
 
 3. **Copie o Arquivo de Configuração**
-
+    
+    ```bash
     cp .env.example .env
 
 4. **Gere a Chave de Aplicação**
-
+    
+    ```bash
     php artisan key:generate
 
 5. **Execute as Migrações**
 
+    ```bash
     php artisan migrate
 
 6. **Inicie o Servidor Local**
 
+    ```bash
     php artisan serve
 
 7. **Observações**

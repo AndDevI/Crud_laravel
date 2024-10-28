@@ -35,7 +35,7 @@ Antes de executar o projeto, certifique-se de ter instalado em sua máquina:
 
 ## Instalação
 
-Siga os passos abaixo para executar o projeto em sua máquina local:
+Siga os passos abaixo para executar o projeto em sua máquina local: <br>
 **Observações** <br>
    Nesse projeto foi utilizando o **SQLite** então baixe de acordo com o seu sistema operacional, <br> 
    mas você pode utilizar outro Banco de Dados, basta fazer as configurações necessárias no arquivo .env.

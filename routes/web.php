@@ -13,7 +13,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 use App\Http\Controllers\ProductController;
-Route::controller(ProductController::class)->group(function () {
+Route::middleware('auth')->controller(ProductController::class)->group(function () {
     Route::get('/home', 'home')->name('home');
     Route::get('/functions/create', 'create')->name('create');
     Route::post('/products', 'store')->name('store');

@@ -6,15 +6,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Product;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProductController extends Controller
 {
     public function home() {
-        $products = Product::orderBy('created_at', 'DESC')->get();
+        $products = Product::where('user_id', Auth::id())
+                            ->orderBy('created_at', 'DESC')
+                            ->get();
+
         return view('page/home', [
             'products' => $products
         ]);
     }
+
 
     public function create() {
         return view('page/functions/create');
@@ -49,6 +55,8 @@ class ProductController extends Controller
 
             $product->image = $imageName;
         }
+
+        $product->user_id = Auth::id();
 
         $product->save();
 

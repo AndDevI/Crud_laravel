@@ -73,9 +73,6 @@ Siga os passos abaixo para executar o projeto em sua máquina local: <br><br>
     ```bash
     php artisan serve
 
-
-
  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Andrew Raphael</a>.
   </div>

@@ -72,6 +72,7 @@ Siga os passos abaixo para executar o projeto em sua máquina local: <br><br>
 
     ```bash
     php artisan serve
+    npm run dev
 
  <div class="attribution">
     Coded by <a href="#">Andrew Raphael</a>.

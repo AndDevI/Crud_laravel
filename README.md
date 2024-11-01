@@ -31,7 +31,7 @@ Antes de executar o projeto, certifique-se de ter instalado em sua máquina:
 
 - PHP (versão 8.0 ou superior)
 - Composer
-- MySQL
+- SQLite ou qualquer outro Banco de dados
 
 ## Instalação
 
